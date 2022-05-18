@@ -11,7 +11,7 @@ function App() {
   const getData = async () => {
     if (query !== "") {
       setStatus("Loading data...");
-      setFilter('')
+      setFilter("");
       await fetch(`http://openlibrary.org/search.json?q=${query}`)
         .then((respons) => respons.json())
         .then((data) => {
@@ -20,6 +20,7 @@ function App() {
           data.docs.map((d) => {
             // console.log(d.key, d.author_name[0])
             const res = {
+              key: d.key.substr(7),
               title: d.title,
               isbn: d.isbn ? d.isbn[0] : null,
               author: d.author_name ? d.author_name[0] : "no author find",
@@ -43,31 +44,32 @@ function App() {
     getData();
   };
 
-  // const alphaData = bookData.filter((b) => {});
-
   const selectFilter = (e) => {
-    setFilter(e.target.value)
+    setFilter(e.target.value);
     filterData(e.target.value);
   };
 
   const filterData = (value) => {
-    console.log(value)
-    if(value =='Default'){
-      return 
-    }else if(value == 'A-Z') {
-        setBookData((prevState) => {
-          return [...prevState.sort((a,b) => a.title > b.title ? 1 : -1)]
-        })
-    }else if(value == 'Recent'){
+    if (value == "A-Z") {
       setBookData((prevState) => {
-        return [...prevState.sort((a,b) => new Date(...b.publishdate.split('/').reverse()) - new Date(...a.publishdate.split('/').reverse()))]
-      })
-    }else{
-      return bookData
+        return [...prevState.sort((a, b) => (a.title > b.title ? 1 : -1))];
+      });
+    } else if (value == "Recent") {
+      setBookData((prevState) => {
+        return [
+          ...prevState.sort(
+            (a, b) =>
+              new Date(...b.publishdate.split("/").reverse()) -
+              new Date(...a.publishdate.split("/").reverse())
+          ),
+        ];
+      });
+    } else {
+      return bookData;
     }
   };
 
-  console.log(bookData)
+  console.log(bookData);
 
   return (
     <div className="app">
@@ -82,7 +84,14 @@ function App() {
           autoComplete="off"
           placeholder="Search the Book"
         />
-        <input type="submit" value="Search" />
+        <button
+          className="btn"
+          type="submit"
+          value="Search"
+          aria-label="Search"
+        >
+          Search
+        </button>
       </form>
       <div>
         <select
@@ -96,18 +105,19 @@ function App() {
           <option value="Recent">Recent Published</option>
         </select>
       </div>
-      <div className="books">
-        <h2>{status}</h2>
+      <h2>{status}</h2>
+      <main className="books">
         {bookData &&
           bookData.map((data) => (
             <Book
+              key={data.key}
               title={data.title}
               isbn={data.isbn}
               author={data.author}
               publishdate={data.publishdate}
             />
           ))}
-      </div>
+      </main>
     </div>
   );
 }
