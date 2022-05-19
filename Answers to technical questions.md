@@ -1,6 +1,6 @@
 ### 1.How long did you spend on the coding assignment? 
 
-Several hours
+Around 1 day
 
 ### a.What would you add to your solution if you had more time?
 
