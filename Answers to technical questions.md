@@ -34,13 +34,13 @@ I will group all information that will alawys be used in one place and make it s
 
 ### 5.Please describe yourself using correctly formatted JSON.
 
-{
-"name":"Lan Mi", 
-"gender":"Female", 
-"city":"Toronto",
-"hobby":"meditation",
-"active": true,
-"movie":"Harry Potter",
-"food":["chinese food", "japanese food"],
+{\
+"name":"Lan Mi", \
+"gender":"Female", \
+"city":"Toronto",\
+"hobby":"meditation",\
+"active": true,\
+"movie":"Harry Potter",\
+"food":["chinese food", "japanese food"],\
 };
 
