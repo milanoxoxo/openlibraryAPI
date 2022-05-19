@@ -16,10 +16,10 @@ I think the most useful feature that was added to the latest version of React wa
 
 import {startTransition} from 'react';
 
-// It is urgent to show the user typed
+//It is urgent to show the user typed\
 setInputValue(input);
 
-// The set update which is not urgent could be put inside startTransition()
+//The set update which is not urgent could be put inside startTransition()\
 startTransition(() => {
   setUserName(input);
 });
