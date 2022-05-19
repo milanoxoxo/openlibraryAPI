@@ -23,6 +23,7 @@ function App() {
               key: d.key.substr(7),
               title: d.title,
               isbn: d.isbn ? d.isbn[0] : null,
+              cover: d.cover_i ? d.cover_i : null,
               author: d.author_name ? d.author_name[0] : "no author find",
               publishdate: d.publish_date
                 ? d.publish_date[0]
@@ -113,6 +114,7 @@ function App() {
               key={data.key}
               title={data.title}
               isbn={data.isbn}
+              cover={data.cover}
               author={data.author}
               publishdate={data.publishdate}
             />

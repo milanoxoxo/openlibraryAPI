@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 
 const Book = (props) => {
-  const image = `https://covers.openlibrary.org/b/isbn/${props.isbn}-L.jpg`;
-
+  let image
+  if(props.cover !== null){
+    image = `https://covers.openlibrary.org/b/id/${props.cover}-L.jpg`;
+  }else{
+    image = `https://covers.openlibrary.org/b/isbn/${props.isbn}-L.jpg`
+  }
+  
   return (
     <div className="book">
       <img src={image} alt={props.title} />
