@@ -1,16 +1,16 @@
-###`1.How long did you spend on the coding assignment? `
+### 1.How long did you spend on the coding assignment? 
 
 Several hours
 
-###a.What would you add to your solution if you had more time?
+### a.What would you add to your solution if you had more time?
 
 I will add a recommendation section to share some of my own favorite books with others
 
-###b.If you didn't spend much time on the coding test, then use this as an opportunity to explain what you would add.
+### b.If you didn't spend much time on the coding test, then use this as an opportunity to explain what you would add.
 
 Recommendation section like I said before, and also a filter to show the book according to the subject(Fiction, Poetry, Literature, English)
 
-###2.What was the most useful feature that was added to the latest version of your chosen language? Please include a snippet of code that shows how you've used it.
+### 2.What was the most useful feature that was added to the latest version of your chosen language? Please include a snippet of code that shows how you've used it.
 
 I think the most useful feature that was added to the latest version of React was Transitions
 
@@ -24,15 +24,15 @@ startTransition(() => {
   setUserName(input);
 });
 
-###3.How would you track down a performance issue in production? Have you ever had to do this?
+### 3.How would you track down a performance issue in production? Have you ever had to do this?
 
 Load testing is the best way to track down performance issues and productivity. I do not have much direct experience with this, However I know some way to do performance detecting. For example, use some testing website for performance testing, Check CPU and Memory Usage, Check Bots and Crawling...
 
-###4.How would you improve the API that you just used?
+### 4.How would you improve the API that you just used?
 
 I will group all information that will alawys be used in one place and make it simple. For example, after the "search" http request send, the resonpse at least include title, author, edition, cover, publish date, subject, language, description which help people get a basic idea according to the title they typed for searching
 
-###5.Please describe yourself using correctly formatted JSON.
+### 5.Please describe yourself using correctly formatted JSON.
 
 {
 "name":"Lan Mi", 
